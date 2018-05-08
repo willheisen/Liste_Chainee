@@ -23,6 +23,7 @@ int main(int argc, char ** argv)
 	AddElement(&list, 71, 3);
 	DisplayList(&list);
 	DeleteElement(&list, 2);
+	DisplayElement(&list, 3);
 	DisplayList(&list);
 	DeleteList(&list);
 

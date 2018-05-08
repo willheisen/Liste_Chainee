@@ -155,6 +155,24 @@ int DeleteList( struct list_t * list )
 	return OK;
 }
 
+void DisplayElement( struct list_t * list, unsigned int pos )
+{
+	struct element_t * element = NULL;
+	element = list->head;
+	if ( pos >= list->length )
+	{
+		printf("Can't dsplay Element's value at position n°: %d, because there is(are) %d element(s) in the list.\n", pos, list->length);
+	}
+	else
+	{
+		while(element->position != pos)
+		{
+			element = element->pNext;
+		}
+		printf("Element's value at position n°%d: %d\n", element->position, element->value);
+	}
+}
+
 int DisplayList( struct list_t * list )
 {
 	struct element_t * element = NULL;

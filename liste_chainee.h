@@ -71,6 +71,15 @@ int DeleteElement( struct list_t * list, unsigned int pos );
 /*  -  ERROR if error occured, OK otherwise (int)      */
 int DeleteList( struct list_t * list );
 
+/* Description: Display list's element's value at specified position */
+/* Inputs:                                             */
+/*  - list (struct list_t *): list's pointer           */
+/*  - pos (int): position of element                   */
+/*                                                     */
+/* Outputs:                                            */
+/*  -                                                  */
+void DisplayElement( struct list_t * list, unsigned int pos );
+
 /* Description: Display list's Elements positions and values */
 /* Inputs:                                             */
 /*  - list (struct list_t *): list's pointer           */
