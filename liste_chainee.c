@@ -11,19 +11,19 @@
 #include "liste_chainee.h"
 
  /* FUNCTIONS IMPLEMENTATIONS */
-struct element_t * CreateElement( int val )
+element_t * CreateElement( int val )
 {
-	struct element_t * newElement;
+	element_t * newElement;
 	newElement = malloc(sizeof(newElement));	
 	newElement->value = val;
 	newElement->pNext = NULL;
 	return newElement;
 }
 
-unsigned int AddElement( struct list_t * list, int val, unsigned int pos )
+unsigned int AddElement( list_t * list, int val, unsigned int pos )
 {
 	/* Check if the element can be placed at the desired position in the list */
-	struct element_t * element, * newElement;
+	element_t * element, * newElement;
 	/* Initialise element with first element of list */
 	element = list->head;
 	/* If the position is superior than list's length, can't place the element */
@@ -88,9 +88,9 @@ unsigned int AddElement( struct list_t * list, int val, unsigned int pos )
 	return list->length;
 }
 
-int DeleteElement( struct list_t * list, unsigned int pos )
+int DeleteElement( list_t * list, unsigned int pos )
 {
-	struct element_t * element = NULL;
+	element_t * element = NULL;
 	struct  element_t * elementToDel = NULL;
 	/* If there's a element in the list with the specified position */
 	if( pos < list->length )
@@ -142,9 +142,9 @@ int DeleteElement( struct list_t * list, unsigned int pos )
 	return list->length;
 }
 
-int DeleteList( struct list_t * list )
+int DeleteList( list_t * list )
 {
-	struct element_t * element = NULL;
+	element_t * element = NULL;
 	element = list->head;
 	while(element)
 	{
@@ -155,9 +155,9 @@ int DeleteList( struct list_t * list )
 	return OK;
 }
 
-void DisplayElement( struct list_t * list, unsigned int pos )
+void DisplayElement( list_t * list, unsigned int pos )
 {
-	struct element_t * element = NULL;
+	element_t * element = NULL;
 	element = list->head;
 	if ( pos >= list->length )
 	{
@@ -173,9 +173,9 @@ void DisplayElement( struct list_t * list, unsigned int pos )
 	}
 }
 
-int DisplayList( struct list_t * list )
+int DisplayList( list_t * list )
 {
-	struct element_t * element = NULL;
+	element_t * element = NULL;
 	/* Initialise element with first element of list */
 	element = list->head;
 	/* While there's no element with NULL value, display position and value */

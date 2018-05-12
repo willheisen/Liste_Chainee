@@ -14,7 +14,7 @@
 
 int main(int argc, char ** argv)
 {
-	struct list_t list;
+	list_t list;
 	list.length = 0;
 	int nb = 0;
 	AddElement(&list, 68, 0);

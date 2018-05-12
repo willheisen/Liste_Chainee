@@ -20,17 +20,21 @@
 
 /*********** DATA TYPES ***********/
 /* element_t: basic element data type */
+typedef struct element_t element_t;
+
 struct element_t
 {
 	int value;
 	int position;
-	struct element_t * pNext;
+	element_t * pNext;
 };
 
 /* list_t: list data type */
+typedef struct list_t list_t;
+
 struct list_t
 {
-	struct element_t * head; /* Head of list */
+	element_t * head;        /* Head of list */
 	unsigned int length;     /* List's length */
 };
 
@@ -41,52 +45,52 @@ struct list_t
 /*  - val (int): value of element                      */
 /*                                                     */
 /* Outputs:                                            */
-/*  -  pointer on new created element (struct element_t *) */
-struct element_t * CreateElement( int val );
+/*  -  pointer on new created element (element_t *) */
+element_t * CreateElement( int val );
 
 /* Description: Create a simple element and add to the list, at specified position  */
 /* Inputs:                                             */
-/*  - list (struct list_t *): list's pointer           */
+/*  - list (list_t *): list's pointer                  */
 /*  - val (int): value of element                      */
 /*  - pos ( unsigned int): position of element         */
 /*                                                     */
 /* Outputs:                                            */
 /*  - number of displayed element (int)                */
-unsigned int AddElement( struct list_t * list, int val, unsigned int pos );
+unsigned int AddElement( list_t * list, int val, unsigned int pos );
 
 /* Description: Delete element in list at specified position  */
 /* Inputs:                                             */
-/*  - list (struct list_t *): list's pointer           */
+/*  - list (list_t *): list's pointer                  */
 /*  - pos (int): position of element                   */
 /*                                                     */
 /* Outputs:                                            */
 /*  - number of list's elements (int)                  */
-int DeleteElement( struct list_t * list, unsigned int pos );
+int DeleteElement( list_t * list, unsigned int pos );
 
 /* Description: Delete list's elements                 */
 /* Inputs:                                             */
-/*  - list (struct list_t *): list's pointer           */
+/*  - list (list_t *): list's pointer                  */
 /*                                                     */
 /* Outputs:                                            */
 /*  -  ERROR if error occured, OK otherwise (int)      */
-int DeleteList( struct list_t * list );
+int DeleteList( list_t * list );
 
 /* Description: Display list's element's value at specified position */
 /* Inputs:                                             */
-/*  - list (struct list_t *): list's pointer           */
+/*  - list (list_t *): list's pointer                  */
 /*  - pos (int): position of element                   */
 /*                                                     */
 /* Outputs:                                            */
 /*  -                                                  */
-void DisplayElement( struct list_t * list, unsigned int pos );
+void DisplayElement( list_t * list, unsigned int pos );
 
 /* Description: Display list's Elements positions and values */
 /* Inputs:                                             */
-/*  - list (struct list_t *): list's pointer           */
+/*  - list (list_t *): list's pointer                  */
 /*                                                     */
 /* Outputs:                                            */
 /*  - number of displayed element (int)                */
-int DisplayList( struct list_t * list );
+int DisplayList( list_t * list );
 
 
 #endif /* LISTE_CHAINEE_H */
